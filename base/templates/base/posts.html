@@ -1,6 +1,31 @@
 {%  extends 'base/main.html' %}
-
+{% load static %}
 {%  block content %}
-<h1>posts</h1>
 
+<h1>posts</h1>
+<div class="post-wrapper">
+
+    {% for post in posts %}
+    <div>
+        <div class="post">
+            <img class="thumbnail" src="{{post.thumbnail.url}}">
+            <div class="post-preview">
+                <h6 class="post-title">{{post.name}}</h6>
+                <p class="post-intro">{{post.description}}</p>
+                <a href="{% url 'post' post.id %}">Read More</a>
+                {% if request.user.is_staff %}
+                    | <a href="{% url 'update_post' post.id %}">Edit</a>
+                    | <a href="{% url 'delete_post' post.id %}">Delete</a>
+                {% endif %}
+                <hr>
+                {% for tag in post.tags.all %}
+                    <span class="tag">{{tag}}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% empty %}
+        <h3>No posts found...</h3>
+    {% endfor %}
+</div>
 {%  endblock content %}

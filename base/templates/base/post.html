@@ -1,6 +1,18 @@
 {%  extends 'base/main.html' %}
-
+{% load static %}
 {%  block content %}
-<h1>post</h1>
+
+<div>
+<h1>{{post.description}}</h1>
+    <p>hello</p>
+    <div class="gallery">
+        <div>
+            <div class="post">
+                <img class="image" src={{post.thumbnail.url}}>
+            </div>
+        </div>
+     
+</div>
+
 
 {%  endblock content %}

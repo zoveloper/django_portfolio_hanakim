@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
@@ -15,40 +16,21 @@
 <body>
     <section class="s1">
                 {% include 'base/navbar.html'%}
-
-                <div class="check">
-                    <label><input type="checkbox" id="image-size" />Alternate image size</label>
-                  </div>
-                  <div class="grid-container">
-                    <div class="grid">
-                     <div class="grid-sizer"></div>
-                      <div class="gutter-sizer"></div>
-                        <div class="grid-item randomize">
-                          <img src="{% static 'images/IMG_0829 2.jpg' %}">
-                        </div>
-                        <div class="grid-item"><img src="{% static 'images/IMG_0829 2.jpg' %}">
-                        </div>
-                         <div class="grid-item randomize">
-                          <img src="{% static 'images/IMG_0829 2.jpg' %}">
-                      </div>
-                     <div class="grid-item"><img src="{% static 'images/IMG_0829 2.jpg' %}">
-                    </div>
-                         <div class="grid-item randomize"><img src="{% static 'images/IMG_0829 2.jpg' %}">
-                    </div>
-                        <div class="grid-item">
-                        <img src="{% static 'images/IMG_0829 2.jpg' %}">
-                        </div>
-                      <div class="grid-item randomize"><img src="{% static 'images/IMG_0829 2.jpg' %}">
-                      </div>
-                       <div class="grid-item"><img src="{% static 'images/IMG_0829 2.jpg' %}">
-                    </div>
-                     <div class="grid-item"><img src="{% static 'images/IMG_0829 2.jpg' %}">
-                    </div>
-                         <div class="grid-item randomize"><img src="{% static 'images/IMG_0829 2.jpg' %}">
-                    </div>
-                    </div>
-                </div>
+                        <div class="gallery">
+                            {% for post in posts %}
+                            <div>
+                                <div class="post">
+                                    <img class="image" src="{{post.thumbnail.url}}">
+                                    <div class="post-preview">
+                                        <a href="{% url 'post' post.id %}">test</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                       </div>
     </section>
+
+
     <script type="text/javascript">
     let static ="{% static 'css'%}"
     </script>
