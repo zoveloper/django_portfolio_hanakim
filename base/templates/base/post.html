@@ -2,14 +2,21 @@
 {% load static %}
 {%  block content %}
 
+
 <div>
-<h1>{{post.description}}</h1>
     <p>hello</p>
-    <div class="gallery">
+
+    <div class="post-wrapper">
         <div>
-            <div class="post">
+            <div class="post-detail">
                 <img class="image" src={{post.thumbnail.url}}>
             </div>
+            <p>{{post.description|safe}}</p>
+
+            {% if request.user.is_staff %}
+                    | <a href="{% url 'update_post' post.id %}">Edit</a>
+                    <a href="{% url 'delete_post' post.id %}">Delete</a>
+                {% endif %}
         </div>
      
 </div>

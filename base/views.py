@@ -14,7 +14,7 @@ def home(request):
     return render(request,'base/index.html',context)
 
 def posts(request, pk):
-    posts = Post.objects.get(id=pk)
+    posts = Post.objects.filter(active=true)
 
     context = {'posts':posts}
     return render(request,'base/posts.html', context)
@@ -55,3 +55,13 @@ def updatePost(request, pk):
 
     context = {'form':form}
     return render(request,'base/post_form.html', context)
+
+@login_required(login_url="home")
+def deletePost(request,pk):
+    post =Post.objects.get(id=pk)
+
+    if request.method =='POST':
+        post.delete()
+        return redirect('home')
+    context = {'item':post}
+    return render(request,'base/delete.html',context)

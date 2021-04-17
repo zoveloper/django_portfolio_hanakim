@@ -10,7 +10,6 @@
     --previewBg:rgb(251,249,243,0.8);
 }
 
-
 html, body{
     padding:0;
     margin:0;
@@ -29,8 +28,10 @@ p,li, span, label, input, textarea{
 }
 a{
     text-decoration: none;
-    color:#17a2b8;
+    color:#20263f;
+    font-family: 'Roboto', sans-serif;
 }
+
 
 ul{
     list-style:none;
@@ -49,48 +50,91 @@ h3 {font-size:28px;}
     border-bottom:1px solid var(--borderColor)
 }
 
-.main-container{
-    width: 1200px;
-	margin: 0 auto;
-}
-.form-wrapper{
-    display: block;
-    margin: 20px;
-    padding: 20px;
-}
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3,3fr);
-    grid-auto-rows: minmax(500px,auto);
-    align-items: start;
-    grid-gap: 1rem;
-    grid-are:
-    'image image image'
-    'image image image'
-    'image image image';
-    
-    background-color: aqua;
+.hero {
+    /* Sizing */
+    width: 100vw;
     height: 100vh;
-}
-
-img{
-    height: 200px;
-    width: auto;
-}
-
-
-.logo-wrapper{
-    padding: 5px;
-    display: grid;
-    justify-content: start;
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Text styles */
     text-align: center;
-    align-content: center;
-    min-height: 5em;
+    color: white; /* ADD THIS LINE */
+    
+    /* Background styles */
+    background-image: url('hero_img.gif');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
+.hero h1 {
+    /* Text styles */
+    font-size: 5em;
+    
+    /* Margins */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
 
+.hero .btn {
+    /* Positioning and sizing */
+    display: block;
+    width: 100px;
+    
+    /* Padding and margins */
+    padding: 1em;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Text styles */
+    color: black; /* CHANGE THIS LINE */
+    text-decoration: none;
+    font-size: 1em;
+    
+    /* Border styles */
+    border: 3px solid white; /* CHANGE THIS LINE */
+    border-radius: 20px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: white;
+    padding-bottom: 0px;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 0px;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 3;
 
 }
-#logo{
+.main-nav{
+    display: flex;
+   
+}
+.main-nav li{
+    display: inline-block;
+    padding: 0px 20px;
+   
+}
+.main-nav li a{
+    transition: all 0.3s ease 0s;  
+}
+.main-nav li a:hover{
+    color:red
+   
+}
+.logo{
     padding: 0;
     margin: 10px;
     height: 100px;
@@ -100,55 +144,64 @@ img{
     border-radius: 5px 5px 5px 5px;
     
 }
-
-
-.main-nav-wrapper{
-    width: 100%;  
+.gallery {
+    padding-top:100px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template: repeat(3, 300px) / repeat(3, 400px);
     
-    border-radius: 5px 5px 0 0;
-    border-bottom: 1px solid var(--borderColor);
+    margin: 5%;
+    z-index: 1;
+  }
+
+  .gallery>.post>.image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    
+  }
+
+.post-preview{
+    display: none;
+    position: absolute;
+}
+.gallery>.post:hover {
+    transform: scale(1);
+  }
+  .gallery>.post:hover .post-preview {
+    display: block;
+    text-align: center;
+    color:white
+  }
+  
+  .gallery>.post:hover img {
+    opacity: 0.8;
+
+  }
+
+	
+
+.gallery>.post {
     display: flex;
-    justify-content: space-between;
-    align-items:center;
-    background-color: #fff;
-    
-    position: fixed;
-    top: 0;
-
-    -webkit-box-shadow:  0 1px 0 0 rgba(0,0,0,0.3); 
-    box-shadow:  0 1px 0 0 rgba(0,0,0,0.3);
-}
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-style: normal;
+    color: #20263f;
+  }
 
 
-#main-navigation li {
-    display: inline-block;
-    margin-right: 10px;
-    margin-left: 10px;
-    font-size: 20px;
-}
 
-
-#profile_pic{
+.logo img{
     display: block;
     margin: auto;
 
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     object-fit: cover;
     border:2px soild var(--borderColor);
 
 }
-
-#insta {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    -webkit-background-clip: text;
-            /* Also define standard property for compatibility */
-            background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-    font-size:30px; /* change this to change the size*/
-    
-  }
 
 
 @media screen and (max-width : 1000px) {
@@ -157,18 +210,7 @@ img{
         border-top: 2px solid #DDDDDD;
     }
 
-    .gallery {
-        /* Prevent vertical gaps */
-       
-        line-height: 0;
-         
-        -webkit-column-count: 2;
-        -webkit-column-gap:   0px;
-        -moz-column-count:    2;
-        -moz-column-gap:      0px;
-        column-count:         2;
-        column-gap:           10px;  
-      }
+  
 }
 
 @media screen and (max-width : 768px) {
@@ -177,17 +219,6 @@ img{
         border-top: 2px solid #DDDDDD;
     }
 
-    .gallery {
-        /* Prevent vertical gaps */
-       
-        line-height: 0;
-         
-        -webkit-column-count: 1;
-        -webkit-column-gap:   0px;
-        -moz-column-count:    1;
-        -moz-column-gap:      0px;
-        column-count:         1;
-        column-gap:           10px;  
-      }
+
 }
 
