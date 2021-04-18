@@ -11,7 +11,7 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
 
     
@@ -22,5 +22,9 @@
     {%  block content %}
     <!--Content gose here-->
     {% endblock content %}
+    <script type="text/javascript">
+        let static ="{% static 'css'%}"
+        </script>
+   <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

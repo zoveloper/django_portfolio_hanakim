@@ -108,19 +108,24 @@ h3 {font-size:28px;}
     align-items: center;
     background-color: white;
     padding-bottom: 0px;
-    padding-left: 10%;
-    padding-right: 10%;
     padding-top: 0px;
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
     z-index: 3;
-
+    width: 100%;
+}
+.navbar-wrapper{
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+    justify-content: space-between;
 }
 .main-nav{
     display: flex;
     padding-left:0;
-    padding-right:200px;
+    
 }
 .main-nav li{
     display: inline-block;
@@ -247,12 +252,13 @@ h3 {font-size:28px;}
     .main-nav{
         display: none;
         flex-direction: column;
-        align-items: center;
-        width: 100;
+        width: 100%;
+        
+        
     }
     .main-nav li{
         width: 100%;
-        text-align: center;
+        
     }
     .gallery {
         padding-top:100px;
@@ -267,8 +273,13 @@ h3 {font-size:28px;}
           display: block ;
       }
     
-    .main-nav.active{
+    .main-nav.active {
         display: flex;
+        padding-top: 20%;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px 10px 10px 10px;
+        
     }
 
 }
