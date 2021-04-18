@@ -1,13 +1,14 @@
 {% load static %}
 
-    <header>
+    <div class="navbar">
         <a href="{% url 'home' %}"><img class="logo" type="image" src="{% static 'images/logo_sample.png'%}" ></a>
         <ul class="main-nav">
             {% if request.user.is_authenticated %}
             <li id="main-nav-6"><a href="{% url 'create_post' %}"><b>POST</b></a></li>
             {% endif %}   
             <li class="main-nav-item"><a href="{% url 'home' %}"><b>GALLERY</b></a></li>
-            <li class="main-nav-item"><a href="#"><b>CONTACT</b></a></li>
-
+            <li class="main-nav-item"><a href="#"><b>CONTACT</b></a></li>  
         </ul>
-    </header>  
+        <a href="#" class="navbar_toggleBtn"><i class="fas fa-bars"></i></a>
+    </div>  
+

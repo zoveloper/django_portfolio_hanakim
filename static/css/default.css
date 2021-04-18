@@ -102,15 +102,14 @@ h3 {font-size:28px;}
     border-radius: 20px;
 }
 
-header{
+.navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
     background-color: white;
     padding-bottom: 0px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 0px;
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
@@ -120,12 +119,12 @@ header{
 }
 .main-nav{
     display: flex;
-    padding: 10%;
-
+    padding-left:0;
+    padding-right:200px;
 }
 .main-nav li{
     display: inline-block;
-    padding: 0px 20px;
+    padding: 8px 10px;
    
 }
 .main-nav li a{
@@ -135,11 +134,18 @@ header{
     color:red
    
 }
+.navbar_toggleBtn{
+    display: none;
+    position: absolute;
+    right: 80px;
+    font-size: 30px;
+    color: black;
+}
 .logo{
     padding: 0;
     margin: 10px;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     object-fit: cover;
 
     border-radius: 5px 5px 5px 5px;
@@ -192,17 +198,6 @@ header{
   }
 
 
-
-.logo img{
-    display: block;
-    margin: auto;
-
-    height: 100px;
-    width: 100px;
-    object-fit: cover;
-    border:2px soild var(--borderColor);
-
-}
 .form-wrapper{
     padding-top:100px;
     margin-left: 50px;
@@ -229,9 +224,8 @@ header{
     
 }
 
-
 @media screen and (max-width : 1000px) {
-
+   
     .gallery {
         padding-top:100px;
         display: grid;
@@ -245,7 +239,21 @@ header{
 }
 
 @media screen and (max-width : 650px) {
-
+    .navbar{
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 24px;
+    }
+    .main-nav{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100;
+    }
+    .main-nav li{
+        width: 100%;
+        text-align: center;
+    }
     .gallery {
         padding-top:100px;
         display: grid;
@@ -255,6 +263,13 @@ header{
         margin: 5%;
         z-index: 1;
       }
+      .navbar_toggleBtn{
+          display: block ;
+      }
+    
+    .main-nav.active{
+        display: flex;
+    }
 
 }
 
