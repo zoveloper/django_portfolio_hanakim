@@ -2,8 +2,17 @@
 {% load static %}
 {%  block content %}
 
-
-<div>
+<section class="post-detail-section">
+    <div class="admin-fuction">            
+        {% if request.user.is_staff %}
+        <form action="{% url 'update_post' post.id %}" class="btn-1">
+            <button type="submit">EDIT</button>
+         </form>
+         <form action="{% url 'delete_post' post.id %}" class="btn-2">
+            <button type="submit">DELETE</button>
+         </form>
+        {% endif %}
+    </div>
     <p>hello</p>
 
     <div class="post-wrapper">
@@ -13,13 +22,9 @@
             </div>
             <p>{{post.description|safe}}</p>
 
-            {% if request.user.is_staff %}
-                    | <a href="{% url 'update_post' post.id %}">Edit</a>
-                    <a href="{% url 'delete_post' post.id %}">Delete</a>
-                {% endif %}
         </div>
      
-</div>
+    </div>
 
-
+</section>
 {%  endblock content %}

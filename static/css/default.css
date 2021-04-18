@@ -109,8 +109,8 @@ header{
     height: 100px;
     background-color: white;
     padding-bottom: 0px;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-top: 0px;
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
@@ -120,7 +120,8 @@ header{
 }
 .main-nav{
     display: flex;
-   
+    padding: 10%;
+
 }
 .main-nav li{
     display: inline-block;
@@ -202,23 +203,58 @@ header{
     border:2px soild var(--borderColor);
 
 }
+.form-wrapper{
+    padding-top:100px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+.post-detail-section{
+    padding-top:100px;
+}
+.admin-fuction{
+    display: flex;
+    justify-content: flex-start;
+    margin: 4px;
+    z-index: 5;
+}
+.btn-1 {
+    padding-top: 5px;
+}
+.btn-2{
+    padding: 5px;
+}
+.delete-container{
+    padding: 300px;
+    
+}
 
 
 @media screen and (max-width : 1000px) {
-    .s1 {
-        background: #000;
-        border-top: 2px solid #DDDDDD;
-    }
 
+    .gallery {
+        padding-top:100px;
+        display: grid;
+        grid-gap: 5px;
+        grid-template: repeat(2, 300px) / repeat(2, 400px);
+        
+        margin: 5%;
+        z-index: 1;
+      }
   
 }
 
-@media screen and (max-width : 768px) {
-    .s1 {
-        background: #fff;
-        border-top: 2px solid #DDDDDD;
-    }
+@media screen and (max-width : 650px) {
 
+    .gallery {
+        padding-top:100px;
+        display: grid;
+        grid-gap: 5px;
+        grid-template: repeat(1, 300px) / repeat(1, 400px);
+        
+        margin: 5%;
+        z-index: 1;
+      }
 
 }
 
