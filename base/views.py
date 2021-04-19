@@ -65,3 +65,7 @@ def deletePost(request,pk):
         return redirect('home')
     context = {'item':post}
     return render(request,'base/delete.html',context)
+
+
+def contact(request):
+    return render(request,'base/contact.html')

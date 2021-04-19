@@ -6,7 +6,8 @@ urlpatterns =[
     path('posts/', views.posts, name="posts"),
     path('post/<str:pk>/', views.post, name="post"),
     path('profile/', views.profile, name="profile"),
-
+    path('profile/', views.profile, name="profile"),
+    path('contact/', views.contact, name="contact"),
     #CRUD PATHS
 
     path('create_post/', views.createPost, name="create_post"),
