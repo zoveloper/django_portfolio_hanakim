@@ -7,9 +7,9 @@
         <form id="contact-form"class="contact-form" method="POST" action="{% url 'send_email'  %}">
             {% csrf_token %}
             <header class="contact-header"> CONTACT</header>
-            <input class="name-field" type="text" name="name" placeholder="NAME"> 
-            <input class="subject-field" type="text" name="subject" placeholder="SUBJECT">
-            <input class="email-field" type="text"name="email" placeholder="E-MAIL">
+            <input class="input-field" type="text" name="name" placeholder="NAME"> 
+            <input class="input-field" type="text" name="subject" placeholder="SUBJECT">
+            <input class="input-field" type="text"name="email" placeholder="E-MAIL">
             <textarea class="message-field" type="text" name="message" placeholder="MESSAGE"></textarea>
             <input class="submit-btn" id="submit-btn" type="submit" value="SEND"> 
         </form>
