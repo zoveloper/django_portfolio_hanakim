@@ -316,76 +316,117 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     color: black;
     font-size: 0.875em;
   }
-  
-  input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
     color: black;
-  }
-  
-  input::-moz-placeholder, textarea::-moz-placeholder {
-    color: black;
-    font-size: 0.875em;
-  }
-  
-  input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
-    color: black;
-  }
-  
-  input::placeholder, textarea::placeholder {
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
     color: black;
     font-size: 0.875em;
-  }
-  
-  input:focus::placeholder, textarea::focus:placeholder {
+}
+
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
     color: black;
-  }
-  
-  input::-ms-placeholder, textarea::-ms-placeholder {
+}
+
+input::placeholder, textarea::placeholder {
     color: black;
     font-size: 0.875em;
-  }
-  
-  input:focus::-ms-placeholder, textarea:focus::-ms-placeholder {
+}
+
+input:focus::placeholder, textarea::focus:placeholder {
     color: black;
-  }
+}
+
+input::-ms-placeholder, textarea::-ms-placeholder {
+color: black;
+font-size: 0.875em;
+}
+
+input:focus::-ms-placeholder, textarea:focus::-ms-placeholder {
+color: black;
+}
 
 input:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {
     color: #e2dedb;
     font-size: 0.875em;
   }
   
-  input:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder {
+input:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder {
     color: #cbc6c1;
-  }
-  
-  input:hover::-moz-placeholder, textarea:hover::-moz-placeholder {
+}
+
+input:hover::-moz-placeholder, textarea:hover::-moz-placeholder {
     color: #e2dedb;
     font-size: 0.875em;
-  }
-  
-  input:hover:focus::-moz-placeholder, textarea:hover:focus::-moz-placeholder {
+}
+
+input:hover:focus::-moz-placeholder, textarea:hover:focus::-moz-placeholder {
     color: #cbc6c1;
-  }
-  
-  input:hover::placeholder, textarea:hover::placeholder {
+}
+
+input:hover::placeholder, textarea:hover::placeholder {
     color: #e2dedb;
     font-size: 0.875em;
-  }
-  
-  input:hover:focus::placeholder, textarea:hover:focus::placeholder {
+}
+
+input:hover:focus::placeholder, textarea:hover:focus::placeholder {
     color: #cbc6c1;
-  }
-  
-  input:hover::placeholder, textarea:hover::placeholder {
+}
+
+input:hover::placeholder, textarea:hover::placeholder {
     color: #e2dedb;
     font-size: 0.875em;
-  }
-  
-  input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
+}
+
+input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
     color: #cbc6c1;
-  }
+}
 .submit-btn:hover {
     color: #e2dedb;
   }
+.modal{
+    display: none;
+    
+}
+.modal.show{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.modal_container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    padding: 30px;
+    background-color:white;
+    border: 1px solid black;
+    border-radius: 3px;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+.modal_btn{
+    margin-top: 10px;
+    width: 80px;
+    height: 30px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    color: black;
+    cursor: pointer;
+    border: solid 1px #b3aca7;
+    border-top: none;
+}
+.modal_btn:hover{
+    color: #e2dedb;
+}
+
+
 @media screen and (max-width : 1000px) {
    
     .gallery {

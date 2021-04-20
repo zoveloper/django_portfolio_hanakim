@@ -8,6 +8,7 @@ urlpatterns =[
     path('profile/', views.profile, name="profile"),
     path('profile/', views.profile, name="profile"),
     path('contact/', views.contact, name="contact"),
+    path('send_email/', views.sendEmail, name="send_email"),
     #CRUD PATHS
 
     path('create_post/', views.createPost, name="create_post"),
