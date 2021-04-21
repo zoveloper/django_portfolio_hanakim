@@ -5,19 +5,19 @@
 <section class="post-detail-section">
     <div class="admin-fuction">            
         {% if request.user.is_staff %}
-        <form action="{% url 'update_post' post.id %}" class="btn-1">
-            <button type="submit">EDIT</button>
+        <form action="{% url 'update_post' post.id %}" >
+            <input class="btn-2"type="submit" value="edit">
          </form>
-         <form action="{% url 'delete_post' post.id %}" class="btn-2">
-            <button type="submit">DELETE</button>
+         <form action="{% url 'delete_post' post.id %}">
+            <input class="btn-2"type="submit" value="Delete">
          </form>
         {% endif %}
     </div>
-    <p>hello</p>
     <div class="post-wrapper">
-        <div>
+        <div class="post-img-container">
+            <h1 class="post-head">{{post.name|safe}}</h1>
             <div class="post-detail">
-                <img class="image" src={{post.thumbnail.url}}>
+                <img class="post-img" src={{post.thumbnail.url}}>
             </div>
             <p>{{post.description|safe}}</p>
         </div>
