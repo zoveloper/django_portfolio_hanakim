@@ -1,9 +1,30 @@
 {%  extends 'base/main.html' %}
 {% load static %}
 {%  block content %}
-<section class="contact-section">
+
+<section class="info-section">
+    <div class="about-container">
+        <div class="about-img">
+            <img src="{% static 'images/jun.jpg'%}" alt="About-img" width="500" height="333">
+        </div>
+        <div class="about-content">
+            <h2> Hi I'm Hana!<br>
+            <h4>Visual Designer and an illustrator<br> based in Canada</h4>
+            </h2>
+            
+            <p>Hello, nice to meet you, I am Hana Kim.
+            <br>Welcome to my design lab where I share my work and illustrations. 
+            <p>Art/design makes our daily life beautiful and vibrant, easier and comfortable.
+                I LOVE the fact that design makes me think, think, and think to get a better solution
+                for current problems. </p>
+                <p>I am simply happy and proud to be a designer and I am always ready
+                    to work that makes me feel alive and excited. 
+                    <br>Thank you for visiting the website, and don't hesitate to contact me! 
+                    <br>kimanaroom@gmail.com<br>
+        </p>
+        </div>
+    </div>
     <div class="contact-container">
-       
         <form id="contact-form"class="contact-form" method="POST" action="{% url 'send_email'  %}">
             {% csrf_token %}
             <header class="contact-header"> CONTACT</header>
@@ -14,7 +35,6 @@
             <input class="submit-btn" id="submit-btn" type="submit" value="SEND"> 
         </form>
     </div>
-
-</form>
+</section>
 
 {%  endblock content %}
