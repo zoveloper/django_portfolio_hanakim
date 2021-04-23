@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 import boto3
 import environ
-#import django_heroku
+import django_heroku
 
 #Initialise Env
 env = environ.Env()
@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-kv5x&dvn_rnx*jz5w*8gkl4d7^5iqfhp#j9d=&%0h*qw!tw+*1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://blooming-bastion-58820.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -97,11 +97,16 @@ WSGI_APPLICATION = 'hanakim.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# New DB
+DATABASES ={
+    'default': dj_database_url.config()
 }
 
 
@@ -187,3 +192,6 @@ AWS_STORAGE_BUCKET_NAME = 'portfolio-hanakim'
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
+
+#New 
+django_heroku.settings(locals())
