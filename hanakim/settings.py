@@ -12,8 +12,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import boto3
+import environ
+#import django_heroku
 
-
+#Initialise Env
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,7 +51,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'ckeditor',
     'ckeditor_uploader',
-    
+    'storages',
 
 ]
 
@@ -71,7 +76,9 @@ ROOT_URLCONF = 'hanakim.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -165,3 +172,18 @@ EMAIL_PORT=587
 EMAIL_USE_TLS= True
 EMAIL_HOST_USER= 'junsang1113@gmail.com'
 EMAIL_HOST_PASSWORD='qfsyjbkncjcsibft'
+
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+AWS_QUERYSTRING_AUTH= False
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_ACCESS_KEY_ID =env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY =env('AWS_SECRET_ACCESS_KEY')
+
+AWS_STORAGE_BUCKET_NAME = 'portfolio-hanakim'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
