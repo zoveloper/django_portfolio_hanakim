@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-kv5x&dvn_rnx*jz5w*8gkl4d7^5iqfhp#j9d=&%0h*qw!tw+*1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://blooming-bastion-58820.herokuapp.com/']
 
 
 # Application definition
