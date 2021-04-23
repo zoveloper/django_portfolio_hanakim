@@ -17,16 +17,21 @@
 
     
 </head>
-<body>
+<body onload="document.body.style.opacity='1'">
+    <div class="wrapper fade-in">
     {% include 'base/navbar.html'%}
 
     {%  block content %}
     <!--Content gose here-->
     {% endblock content %}
+    <div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up top-icon"></i></button>
+    </div>
     <script type="text/javascript">
         let static ="{% static 'css'%}"
         </script>
    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</div>
 </body>
 <footer>&copy; Copyright 2021 zoveloper</footer>
 </html>

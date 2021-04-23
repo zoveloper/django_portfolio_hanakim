@@ -18,7 +18,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
     <title>kimhana room</title>
 </head>
-<body>
+
+<body onload="document.body.style.opacity='1'">
+    <div class="fade-in">
     {% include 'base/navbar.html'%}
     <section class="hero">
         <div class="hero-inner">
@@ -40,15 +42,15 @@
             </div>
     </section>
     <div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up top-icon"></i></button>
     </div>
     <script type="text/javascript">
         let static ="{% static 'css'%}"
         </script>
    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
    
-
+</div>
 </body>
- 
+
 <footer>&copy; Copyright 2021 zoveloper</footer>
 </html>

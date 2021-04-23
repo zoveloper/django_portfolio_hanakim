@@ -8,7 +8,7 @@ toggleBtn.addEventListener('click', () => {
 });
 
 
-
+/*
 const toggleModal = () =>{
     document.querySelector('.modal')
     .classList.toggle('show')
@@ -23,7 +23,7 @@ document.querySelector('#contact-form')
         event.preventDefault();
         toggleModal();
     });
-
+*/
     var mybutton = document.getElementById("myBtn");
 
     // When the user scrolls down 20px from the top of the document, show the button
@@ -42,3 +42,5 @@ document.querySelector('#contact-form')
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
+
+    console.log(document.documentElement.scrollTop)
