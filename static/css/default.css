@@ -76,7 +76,7 @@ h3 {font-size:28px;}
     
     /* Background styles */
     background-image: url('hero_img.gif');
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
