@@ -105,8 +105,15 @@ WSGI_APPLICATION = 'hanakim.wsgi.application'
 # }
 
 # New DB
-DATABASES ={
-    'default': dj_database_url.config()
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'kimanaroom',
+        'USER':'zoveloper',
+        'PASSWORD':'june1234',
+        'HOST':'kimanaroom-identifier.c9fik6vebtbh.us-east-2.rds.amazonaws.com',
+        'PORT':'5432'
+    }
 }
 
 
