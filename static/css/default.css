@@ -567,36 +567,7 @@ footer{
   }
 
 
-.hero {
-    /* Sizing */
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    /* Flexbox stuff */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Text styles */
-    text-align: center;
-    color: white; /* ADD THIS LINE */
-    
-    /* Background styles */
-    background-image: url('hero_img.gif');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
 
-.hero h1 {
-    /* Text styles */
-    font-size: 5em;
-    
-    /* Margins */
-    margin-top: 0;
-    margin-bottom: 0.5em;
-}
 
 @media screen and (max-width : 650px) {
     .navbar{
@@ -614,6 +585,10 @@ footer{
     .main-nav li{
         width: 100%;
         
+    }
+    .navbar-wrapper a{
+        width: 60px;
+        height: 60px;
     }
     .gallery {
         padding-top:100px;
