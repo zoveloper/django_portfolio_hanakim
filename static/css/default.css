@@ -580,16 +580,15 @@ footer{
         flex-direction: column;
         width: 100%;
         
-        
     }
     .main-nav li{
         width: 100%;
-        
     }
     .navbar-wrapper a{
         width: 60px;
         height: 60px;
     }
+
     .gallery {
         padding-top:100px;
         display: grid;
@@ -606,8 +605,9 @@ footer{
     .main-nav.active {
         display: flex;
         padding-top: 20%;
-        align-items: center;
-        text-align: center;
+        padding-left: 20%;
+        align-items: flex-start;
+        text-align: flex-start;
         border-radius: 10px 10px 10px 10px;
         
     }
