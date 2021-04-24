@@ -62,9 +62,9 @@ h3 {font-size:28px;}
 
 .hero {
     /* Sizing */
-    width: 100%;
-    height: 100%;
-    
+    width: 100vw;
+    height: 100vh;
+    position: relative;
     /* Flexbox stuff */
     display: flex;
     justify-content: center;
@@ -76,7 +76,7 @@ h3 {font-size:28px;}
     
     /* Background styles */
     background-image: url('hero_img.gif');
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -91,26 +91,6 @@ h3 {font-size:28px;}
     margin-bottom: 0.5em;
 }
 
-.hero .btn {
-    /* Positioning and sizing */
-    display: block;
-    width: 100px;
-    
-    /* Padding and margins */
-    padding: 1em;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    
-    /* Text styles */
-    color: black; /* CHANGE THIS LINE */
-    text-decoration: none;
-    font-size: 1em;
-    
-    /* Border styles */
-    border: 3px solid white; /* CHANGE THIS LINE */
-    border-radius: 20px;
-}
 
 .navbar{
     display: flex;
