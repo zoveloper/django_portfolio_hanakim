@@ -567,8 +567,6 @@ footer{
   }
 
 
-
-
 @media screen and (max-width : 650px) {
     .navbar{
         flex-direction: column;
@@ -622,6 +620,30 @@ footer{
         margin-left: 5%;
         margin-top: 5%;
     }
+
+    .hero {
+        /* Sizing */
+        max-width: 30vw;
+        height: 30vh;
+    
+        /* Flexbox stuff */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        
+        /* Text styles */
+        text-align: center;
+        color: white; /* ADD THIS LINE */
+        
+        /* Background styles */
+        background-image: url('hero_img.gif');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
 
 }
 
