@@ -1,0 +1,1 @@
+web: gunicorn hanakim.wsgi --log-file -
